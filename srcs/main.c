@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbeaufil <sbeaufil@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ipopa <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/04/21 15:54:31 by sbeaufil          #+#    #+#             */
-/*   Updated: 2015/10/29 19:45:48 by sbeaufil         ###   ########.fr       */
+/*   Created: 2016/05/13 14:32:38 by ipopa             #+#    #+#             */
+/*   Updated: 2016/05/13 14:37:20 by ipopa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,10 @@ int			push_swap(int ac, char **av, t_opt *opt)
 	while (av[++i] != NULL)
 		add_list(&a, ft_atoi(av[i]));
 	if (sorted_stack(a))
+	{
+		ft_putstr("is sorted\n");
 		return (1);
+	}
 	algo(&a, &b, opt);
 	write(1, "\n", 1);
 	if (opt->print)
@@ -72,7 +75,7 @@ int			main(int ac, char **av)
 	opt = (t_opt *)malloc(sizeof(t_opt));
 	init_opt(opt);
 	i = set_opt(av, opt);
-	if ((ac - i) < 2)
+	if ((ac - i) < 1)
 		ft_error();
 	else if (check_arg(ac - i, &(av[i])))
 		ft_error();
