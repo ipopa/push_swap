@@ -20,14 +20,14 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (s == NULL)
 		return (NULL);
-	if (!(sub = malloc((len + 1) * sizeof(char*))))
+	if (!(sub = (char *)malloc((len + 1) * sizeof(char))))
 		return (NULL);
-	while (s[start] != '\0' && i < len)
+	while (s[start] && i < len)
 	{
 		sub[i] = s[start];
 		i++;
 		start++;
 	}
-	sub[i] = '\0';
+	sub[i] = 0;
 	return (sub);
 }
