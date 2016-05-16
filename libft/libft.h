@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <string.h>
 # define MAX_FTOA		10000000
+# define INT_MAX_STR "2147483647"
 
 typedef struct s_list	t_list;
 

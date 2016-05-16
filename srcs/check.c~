@@ -39,6 +39,7 @@ int		check_arg(int ac, char **av)
   i = 0;
   while (i < ac)
     {
+      printf("av %s\n", av[i]);
       if (ft_atoi(av[i]) == 0 && !(ft_strequ(av[i], "0")))
 	return 1;
       i++;
