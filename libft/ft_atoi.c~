@@ -16,7 +16,7 @@ int	ft_atoi(const char *str)
 {
   int	result;
   int sign;
-  unsigned int i;
+  int i;
   char *tmpstr;
 
   result = 0;
@@ -25,7 +25,7 @@ int	ft_atoi(const char *str)
   sign = (tmpstr[i] == '-') ? -1 : 1;
   if (tmpstr[i] == '-' || tmpstr[i] == '+')
     i++;
-  if ((ft_strcmp(tmpstr, INT_MAX_STR) > 0 && ft_strlen(tmpstr) == (10 + i)) || ft_strlen(tmpstr) > (10 + i))
+  if ((ft_strcmp(tmpstr, INT_MAX_STR) > 0 && ft_strlen(tmpstr) == 10) || ft_strlen(tmpstr) > 10)
     sign = 0;
   while ((ft_isdigit(tmpstr[i]) == 1) && tmpstr[i])
     {
